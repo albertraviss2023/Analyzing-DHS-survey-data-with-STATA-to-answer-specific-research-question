@@ -1,0 +1,10 @@
+	type of place of residence			
+Overcrowding Conditions	urban	rural	Total	N
+	%	%	%	
+0	38.8	71.7	66.6	44,146
+1	61.2	28.3	33.4	22,172
+Total	100.0	100.0	100.0	66,319
+
+Pearson: Uncorrected chi2(1) = 4049.0700				
+Design-based F(1.00, 618.00) = 251.6530 Pr = 0.000				
+

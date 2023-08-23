@@ -1,0 +1,10 @@
+	educational attainment							
+Overcrowding Conditions	no education	incomplete primary	complete primary	incomplete secondary	complete secondary	higher	Total	N
+	%	%	%	%	%	%	%	
+0	74.7	64.9	59.4	45.0	32.8	24.9	66.6	44,146
+1	25.3	35.1	40.6	55.0	67.2	75.1	33.4	22,172
+Total	100.0	100.0	100.0	100.0	100.0	100.0	100.0	66,319
+
+Pearson: Uncorrected chi2(5) = 4039.0055								
+Design-based F(4.62, 2855.80) = 79.6863 Pr = 0.000								
+
