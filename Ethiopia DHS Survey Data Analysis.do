@@ -25,8 +25,7 @@ gen hhid =substr(caseid,1,12) // changed ID variable name to match ID variable n
 sort hhid 
 
 merge m:m hhid using "`secondary_HHD'"
-drop if _merge ==1 // drops unmatched from master
-drop if _merge ==2 // drops unmatched from using
+drop if _merge ==2 // drops unmatched individuals from household dataset
 
 tab _merge //check if all is well
 
