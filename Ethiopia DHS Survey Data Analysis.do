@@ -3,24 +3,24 @@ set more off
 set maxvar 100000
 
 *** Working Folder Path ***
-global path_in "..\Documents\DHS" 
-global path_out "$path_in\DTA"
+global path_in "..\Documents\DHS\indta" 
+global path_out "outdta"
 
 ****************************************************************************************
 **** STEP1: Merge Women and Household members datasets
 **** This will introduce household characteristics to the Women's dataset
 ****************************************************************************************
 	 
-*a.Open the secondary dataset, and sort by ID variable
-use "..$path_in\ETPR71FL.DTA", clear
+**** a.Open the secondary dataset, and sort by ID variable
+use "$path_in\ETPR71FL.DTA", clear
 sort hhid  // sort by ID Variable
 
-*b. Save a temporary file of just the variables to merge in 
+****b. Save a temporary file of just the variables to merge in 
 tempfile secondary_HHD 
 save "`secondary_HHD'", replace  
 
-*c. Open primary file * i.e. Women dataset, and sort by ID Variable and merge
-use "..$path_in\ETIR71FL.DTA", clear
+****c. Open primary file * i.e. Women dataset, and sort by ID Variable and merge
+use "$path_in\ETIR71FL.DTA", clear
 gen hhid =substr(caseid,1,12) // changed ID variable name to match ID variable name in the second file 
 sort hhid 
 
@@ -28,9 +28,9 @@ merge m:m hhid using "`secondary_HHD'"
 drop if _merge ==2 // drops unmatched individuals from household dataset
 
 tab _merge //check if all is well
-
-
-save "$path_out\WM_HHM_Merged.DTA", replace  // save merged file
+drop _merge  // _merge variable not needed, so drop
+save "$path_out/et_PR_IR_Merge.dta", replace 
+// Save merged dataset
 
 ****************************************************************************************
 **** STEP2: Setting survey parameters for complex survey design  and installing tabout for
@@ -172,3 +172,19 @@ tabout living_space hv219 [iw=wt] using "hheadch2.xls",c(col) f(1) stats(chi2) s
 logit wealthwm  i.hv025 i.eduwm i.hv104 i.hv025  
 
         *** Results are interpreted by analyzing the p-value depending on the level of significance chosen. 
+
+	
+*** Generate coutry and survey details for estimation ***
+char _dta[cty] "Ethiopia"
+char _dta[ccty] "ET"
+char _dta[year] "2020-2021" 	
+char _dta[survey] "DHS"
+**char _dta[ccnum] "008"
+char _dta[type] "micro"
+
+
+*** Sort, compress and save data with the tranformations ***
+sort hhid
+compress
+la da "Micro data for `_dta[ccty]' (`_dta[ccnum]') from `c(current_date)' (`c(current_time)')."
+save "$path_out/et_PR_IR_final.dta", replace 
