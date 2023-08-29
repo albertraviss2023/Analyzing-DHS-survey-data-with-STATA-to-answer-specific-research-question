@@ -22,7 +22,7 @@ produce the results including descriptive, crosstabs, and regression results.
 ******************************************************************************/
 	 
 	 *** Working Folder Path ***
-global path_in "C:\Users\alber\OneDrive\Documents\Github Projects\Project1 DHS Survey data Analysis and Indicator calculation with STATA\indata"
+global path_in "..\Projects\DHS\indata"
 global path_out "outdta"
 	 
 *******************************************************************************
@@ -126,6 +126,5 @@ char _dta[type] "micro"
 
 *** Sort, compress and save final coded dataset ***
 sort hhid
-compress
 la da "Micro data for `_dta[ccty]' (`_dta[ccnum]') from `c(current_date)' (`c(current_time)')."
 save "$path_out/ETIRPR_coded_fin.dta", replace 
