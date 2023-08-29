@@ -6,7 +6,6 @@ This Code Project provides the code that can be used to merge datasets, perform 
 
 ## Main files:
 The parent folder contains a Main .do script File from which the user can run all the code at once (.do) to compute slum indicators, compute descriptive statistics and perform tests of association and dependency. The user needs to set the paths in the data File files correctly. 
-The parent folder also contains 1 output file in pdf form produced when the code is run properly. 
 
 ## Working with older surveys:
 Additionally, because the indicators that are created using the Code Share Project are based on the Guide to DHS Statistics, they reflect the standard variables that are available in a recent DHS survey dataset. If the provided code is used to create indicators from older surveys, it is possible the variable names have changed over time or are not available in the older survey. The user may need to check the dataset in use for the availability of the variables needed used in the code and may need to adjust for missing variables or rename variables accordingly. Some of the code files will generate the variables with missing values for old surveys if the survey does not have that variable. 
