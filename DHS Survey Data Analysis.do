@@ -12,10 +12,10 @@ Notes/Instructions:
 * For the code below to work, you must save the do file and 2 folders (indata and outdata)
  in the same parent folder, . 
 * In this example, we will answer a specific research question and show how to 
-produce the results including descriptive, crosstabs, and regression results. 
+produce the results including descriptive, crosstabs, and ch2 (test of association) results. 
 
 * Research question: 
-  Is there significant association between room over crowding, education, residence and wealth index.
+  Is there a significant association between room overcrowding, education, residence and wealth index.
   for women aged between 15 and 49? 
 
 * !!! Please follow the notes throughout the do file
