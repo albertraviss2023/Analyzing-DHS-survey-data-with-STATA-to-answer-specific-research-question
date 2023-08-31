@@ -3,6 +3,7 @@
    from start to finish.
    Data input: The model dataset women's file (IR) and household members file
    (PR) for Ethiopia DHS 2019. 
+   Authur: Albert Lutakome
    Date Last Modified: August 29, 2023 by Albert Lutakome. 
 
 Notes/Instructions:
