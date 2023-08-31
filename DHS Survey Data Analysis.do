@@ -1,8 +1,8 @@
 /******************************************************************************
-   Purpose: Illustrating an example of an analysis to answer a research question
-   from start to finish.
+   Purpose: analysis of survey data to answer a research question
+   
    Data input: The model dataset women's file (IR) and household members file
-   (PR) for Ethiopia DHS 2019. 
+   (PR) for DHS. 
    Authur: Albert Lutakome
    Date Last Modified: August 29, 2023 by Albert Lutakome. 
 
