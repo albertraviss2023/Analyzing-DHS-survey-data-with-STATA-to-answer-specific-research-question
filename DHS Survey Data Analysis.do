@@ -19,7 +19,7 @@ produce the results including descriptive, crosstabs, and ch2 (test of associati
   Is there a significant association between room overcrowding, education, residence and wealth index.
   for women aged between 15 and 49? 
 
-* !!! Please follow the notes throughout the do file
+* !!! Other notes as we go along
 ******************************************************************************/
 	 
 	 *** Working Folder Path ***
