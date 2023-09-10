@@ -108,8 +108,8 @@ tabout edu v190 v025 v024 living_space using table2.xls, c(row ci) stats(chi2) s
 ** associated with variable living_space. 
 * This is true for P<0.05, at 95% level of significance. 
 
-* To further investigate, we can use the logistic regression in order to
-* interprete at the odds ratios. 
+* To further investigate the degree of variation that each independent variable has on living_space
+* we can use logistic regression in order to get the odds ratios and coefficients. 
 
 *******************************************************************************
 ** STEP 4: Save coded data for future use. 
