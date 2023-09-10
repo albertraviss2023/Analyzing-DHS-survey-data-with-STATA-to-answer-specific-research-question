@@ -1,8 +1,8 @@
 /******************************************************************************
    Purpose: analysis of survey data to answer a research question
    
-   Data input: The model dataset women's file (IR) and household members file
-   (PR) for DHS. 
+   Data input: The primary dataset women's file (IR) and the secondary dataset is the 
+   household members file (PR) (from DHS). 
    Authur: Albert Lutakome
    Date Last Modified: August 29, 2023 by Albert Lutakome. 
 
@@ -11,15 +11,13 @@ Notes/Instructions:
 * Please have the model dataset downloaded and ready to use. We will use the IR file.
 * You can download the model dataset here: https://www.dhsprogram.com/data/Model-Datasets.cfm
 * For the code below to work, you must save the do file and 2 folders (indata and outdata)
- in the same parent folder, . 
+ in the same parent folder.
 * In this example, we will answer a specific research question and show how to 
 produce the results including descriptive, crosstabs, and ch2 (test of association) results. 
 
 * Research question: 
-  Is there a significant association between room overcrowding, education, residence and wealth index.
-  for women aged between 15 and 49? 
-
-* !!! Other notes as we go along
+  Is there a significant association between living space and social-demographic
+  variables of education, residence and wealth index among women aged between 15 and 49? 
 ******************************************************************************/
 	 
 	 *** Working Folder Path ***
@@ -93,7 +91,7 @@ gen wt=hv005/1000000
 svyset [pw=wt], psu(v021) strata(v022) singleunit(centered)  
 
 * Descriptive table: We check our variables: One way:
-* The variables are tabulated among all women aged [15,49] in IR file
+* The variables are tabulated among all women aged [15,49] 
 tabout edu v190 v025 v024 living_space using table1.xls, c(cell) oneway svy nwt(wt) per pop replace
 
 * Crosstabulation of outcome variable with single social-demographic variable:  
@@ -106,9 +104,9 @@ svy: tab v025 living_space, row per
 tabout edu v190 v025 v024 living_space using table2.xls, c(row ci) stats(chi2) svy nwt(wt) per pop replace 
 
 * Interpretation of chi2test:
-* The results of the crosstabulation show that all variables were significantly 
-** associated with vailable living space. 
-* This is true if P<0.05, at 95% level of significance. 
+* The results of the crosstabulation show that all variables are significantly 
+** associated with variable living_space. 
+* This is true for P<0.05, at 95% level of significance. 
 
 * To further investigate, we can use the logistic regression in order to
 * interprete at the odds ratios. 
@@ -125,7 +123,7 @@ char _dta[survey] "DHS"
 char _dta[type] "micro"
 
 
-*** Sort, compress and save final coded dataset ***
+*** Sort and save final coded dataset ***
 sort hhid
 la da "Micro data for `_dta[ccty]' (`_dta[ccnum]') from `c(current_date)' (`c(current_time)')."
 save "$path_out/ETIRPR_coded_fin.dta", replace 
