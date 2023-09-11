@@ -4,7 +4,7 @@
    Data input: The primary dataset women's file (IR) and the secondary dataset is the 
    household members file (PR) (from DHS). 
    Authur: Albert Lutakome
-   Date Last Modified: August 29, 2023 by Albert Lutakome. 
+   Date Last Modified: September 11, 2023 by Albert Lutakome. 
 
 * For the code below to work, you must save the do file and 2 folders (indata and outdata)
  in the same parent folder.
