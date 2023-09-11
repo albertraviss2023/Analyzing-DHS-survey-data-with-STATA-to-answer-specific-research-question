@@ -58,16 +58,16 @@ save "$path_out/ETPR_IR_Merge.dta", replace
 *******************************************************************************
 *** Socio-demographic variables ***
 
-* education: recode v106 to combine secondary and higher categories
+* education: recode v106 to combine secondary and higher levels
 recode v106 (0=0 None) (1=1 Primary) (2/3=2 "Sec+"), gen(edu)
 
-* wealth quintile: use v190
+* wealth quintile: v190
 
-* place of residence: use v025
+* place of residence: v025
 
-* region: use v024
+* region: v024
 
-* Outcome vriable: living space 
+* Computing Outcome variable: living space 
 
 gen mem_usual =hv012
 replace mem_usual=hv013 if mem_usual==0
