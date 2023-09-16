@@ -75,7 +75,7 @@ replace crowd=mem_usual if hv216==0
 replace crowd=. if hv216>=99
 
 *The threshold for sufficient living space is less or equal to 3 (3<=)
-recode crowd (0/3=0 "No") (4/max=1 "Yes"), gen(over_crowd)
+recode crowd (0/2=0 "No") (3/max=1 "Yes"), gen(over_crowd)
 
 label var over_crowd "Overcrowding Conditions"
 label define over_crowd 1 "Over crowded" 0 "Not crowded"
